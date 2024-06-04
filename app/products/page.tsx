@@ -10,11 +10,10 @@ export default function PaginaDeProdutos() {
     <>
       <section className="px-6 py-4">
         <h1 className="font-bold w-full text-center mt-4 text-3xl tracking-tighter md:text-5xl md:text-start">
-          Estudio por perto
+          Studio por perto
         </h1>
         <p className="text-muted-foreground leading-relaxed text-center md:text-xl md:text-start mt-2">
-          Que tal marcar com uma dos profissionais disponiveis em nossa
-          plataforma.
+        Que tal marcar com um dos profissionais disponíveis em nossa plataforma?
         </p>
         <section className="grid grid-cols-1 place-items-center md:grid-cols-4 justify-center gap-6">
           <AgendamentoTrigger>

@@ -25,6 +25,7 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col">
+       <Link href="/sobreempresa"><Button>Ola</Button></Link>
         <section className="w-full py-12 md:py-24 lg:py-1">
           <div className="container  grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
             <Image
@@ -119,12 +120,11 @@ export default function Home() {
 
           <div className="mt-24 flex justify-center flex-col">
             <h1 className="font-bold text-4xl md:text-6xl w-full text-center">
-              Por que escolher-nos
+            Agradecemos por escolher-nos.
             </h1>
 
             <p className="font-medium text-center mt-4 mx-4">
-              Agendamento e gestao Financeira para empreendedores com excelencia
-              e servicos personalizados de qualidade superior
+            Agendamento e gestão financeira para empreendedores com excelência e serviços personalizados de qualidade superior.
             </p>
           </div>
 
