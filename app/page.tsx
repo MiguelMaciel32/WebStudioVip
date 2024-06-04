@@ -25,7 +25,6 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col">
-       <Link href="/sobreempresa"><Button>Ola</Button></Link>
         <section className="w-full py-12 md:py-24 lg:py-1">
           <div className="container  grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
             <Image
