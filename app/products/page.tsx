@@ -63,7 +63,7 @@ export default function PaginaDeProdutos() {
               </div>
             </CardContent>
           </Card>
-
+      
           <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
             <CardHeader>
               <Image
