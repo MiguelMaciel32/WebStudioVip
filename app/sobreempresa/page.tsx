@@ -5,7 +5,7 @@ export default function PaginaDeProdutos() {
   return (
     <>
       <main className="p-6 space-y-4">
-        <section className="grid grid-cols-1 place-items-center md:grid-cols-2 gap-2 md:place-items-start max-w-xl">
+        <section className="grid grid-cols-1 place-items-center md:grid-cols-2 gap-4  md:place-items-start max-w-xl">
           <section className="">
             <Image
               src={"/Empresa.jpg"}
