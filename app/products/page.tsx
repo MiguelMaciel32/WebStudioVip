@@ -90,9 +90,7 @@ export default function PaginaDeProdutos() {
             </CardContent>
           </Card>
           </Link>
-        </section>
-
-        <section>
+     
         <Link href={"/sobreempresa"}>
           <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
             <CardHeader>
@@ -121,8 +119,7 @@ export default function PaginaDeProdutos() {
           </Card>
           </Link>
            <Link href={"/sobreempresa"}>
-          <section className="grid grid-cols-1 place-items-center md:grid-cols-4 justify-center gap-2">
-          <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
+   <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
             <CardHeader>
               <Image
                 height={320}
@@ -146,9 +143,8 @@ export default function PaginaDeProdutos() {
               </div>
             </CardContent>
           </Card>
-          </section>
           </Link>
-          </section>
+      
            <Link href={"/sobreempresa"}>
           <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
             <CardHeader>
@@ -175,7 +171,8 @@ export default function PaginaDeProdutos() {
             </CardContent>
           </Card>
                 </Link>
-      </section>
+        </section>
+        </section>
     </>
   );
 }
