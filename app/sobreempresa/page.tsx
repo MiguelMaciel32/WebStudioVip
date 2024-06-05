@@ -1,67 +1,80 @@
 import AgendamentoTrigger from "@/components/AgendamentoTrigger";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Instagram, Phone } from "lucide-react";
 import Image from "next/image";
-export default function PaginaDeProdutos() {
+export default function Sobre() {
   return (
-    <>
-      <main className="p-6 space-y-4">
-        <section className="grid grid-cols-1 place-items-center md:grid-cols-2 gap-4  md:place-items-start max-w-xl">
-          <section className="">
-            <Image
-              src={"/Empresa.jpg"}
-              alt="Sobre a empresa"
-              width={400}
-              height={320}
-              className="rounded-lg aspect-video object-cover flex"
-            />
-          </section>
-          <section className="flex flex-col justify-start space-y-4 my-6 w-full">
-            <h1 className="font-bold md:text-5xl tracking-tighter leading-none text-3xl">
-              Sobre Nós
-            </h1>
-            <p className="w-full">
-              Na [Nome da Empresa], celebramos a beleza única de cada pessoa.
-              Oferecemos produtos e serviços de alta qualidade para realçar sua
-              beleza natural. Nossa missão é inspirar confiança e bem-estar em
-              cada cliente que atendemos.
-            </p>
-          </section>
+    <main className="flex flex-col justify-normal p-6 space-y-4">
+      <header className="container grid grid-cols-1 md:grid-cols-2 place-items-center mb-24">
+        <section className="flex justify-center mb-4 md:mb-0">
+          <Image
+            src={"/Empresa.jpg"}
+            alt="Empresa"
+            width={300}
+            height={300}
+            className="aspect-video object-cover rounded-lg min-w-fit max-w-2xl"
+          />
         </section>
-
-        <section className="mb-6">
-          <h1 className="font-bold md:text-5xl tracking-tighter leading-none text-3xl">
-            Endereço
+        <section className="space-y-4">
+          <h1 className="font-bold tracking-tighter text-3xl md:text-5xl leading-tight">
+            Sobre a empresa
           </h1>
-          <section className="">
-            <Card className="w-fit">
-              <CardContent className="p-4">
-                <p className="text-xl leading-relaxed w-full text-center">
-                  Rua Joao Chapolin Colorado, N14, 00000-0000
-                </p>
-              </CardContent>
-            </Card>
-          </section>
+          <p className="text-muted-foreground leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+            sunt, eveniet, maiores, porro exercitationem natus nemo expedita
+            architecto adipisci voluptatibus soluta magnam optio cum molestias
+            doloremque non nulla praesentium veniam?
+          </p>
+          <AgendamentoTrigger>
+            <Button className="w-full">Reservar empresa</Button>
+          </AgendamentoTrigger>
         </section>
-
-        <h1 className="font-bold md:text-5xl tracking-tighter leading-none text-3xl">
-          Nossos Serviços
-        </h1>
-        <section className="w-full flex ">
-          <Card className="w-fit">
-            <CardContent className="p-4">
-              <p className="text-xl leading-relaxed w-full text-center">
-                Tratamentos Faciais Personalizados R$110.00 2HR
-              </p>
-            </CardContent>
-            <CardFooter>
-              <AgendamentoTrigger>
-                <Button className="w-full">Reservar</Button>
-              </AgendamentoTrigger>
-            </CardFooter>
-          </Card>
-        </section>
-      </main>
-    </>
+      </header>
+      <section className="space-y-4">
+        <h2 className="font-bold tracking-tighter text-3xl md:text-4xl leading-tight text-start md:text-center">
+          Veja mais informaçoes sobre essa empresa
+        </h2>
+        <Card className="group hover:bg-primary transition-all">
+          <CardHeader className="group-hover:text-primary-foreground">
+            <CardTitle>Endereços</CardTitle>
+          </CardHeader>
+          <CardContent className="group-hover:text-primary-foreground">
+            <p> Rua Joao Chapolin Colorado, N14, 00000-0000</p>
+          </CardContent>
+        </Card>
+        <Card className="group hover:bg-primary transition-all">
+          <CardHeader className="group-hover:text-primary-foreground">
+            <CardTitle>Contatos</CardTitle>
+            <CardDescription>
+              Contate-nos atraves de suas redes sociais mais utilizadas!
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex gap-4 group-hover:text-primary-foreground">
+            <Button
+              size={"icon"}
+              variant={"outline"}
+              className="group-hover:text-white"
+            >
+              <Instagram />
+            </Button>
+            <Button
+              size={"icon"}
+              variant={"outline"}
+              className="group-hover:text-white"
+            >
+              <Phone />
+            </Button>
+          </CardContent>
+        </Card>
+      </section>
+    </main>
   );
 }
