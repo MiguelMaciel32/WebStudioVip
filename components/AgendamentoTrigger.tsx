@@ -1,14 +1,16 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Calendar as CalendarIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Calendar } from "@/components/ui/calendar"
+import { Calendar as CalendarIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 import {
   Sheet,
   SheetClose,
@@ -21,21 +23,22 @@ import {
 } from "@/components/ui/sheet";
 import React from "react";
 
-export function DatePickerDemo() {
-  const [date, setDate] = React.useState<Date>()
-}
-
-export default function AgendamentoTrigger({ children }: { children: React.ReactNode}) {
+export default function AgendamentoTrigger({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        {children}
-      </SheetTrigger>
+      <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Agendamento</SheetTitle>
           <SheetDescription>
-          Preencha o formulário abaixo para escolher uma data e horário conveniente para sua consulta. Garantimos um atendimento rápido e eficiente.
+            Preencha o formulário abaixo para escolher uma data e horário
+            conveniente para sua consulta. Garantimos um atendimento rápido e
+            eficiente.
           </SheetDescription>
         </SheetHeader>
         <div className="grid gap-4 py-4">
@@ -52,26 +55,26 @@ export default function AgendamentoTrigger({ children }: { children: React.React
             <Input id="username" className="col-span-3" />
           </div>
           <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant={"outline"}
-          className={cn(
-            "w-[280px] justify-start text-left font-normal",
-          )}
-        >
-          <section className="">
-          <CalendarIcon className="mr-2 h-4 w-4 ml-5" />
-          { <span></span>}
-          </section>
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
-        <Calendar
-          mode="single"
-          initialFocus
-        />
-      </PopoverContent>
-    </Popover>
+            <PopoverTrigger asChild>
+              <Button
+                variant={"outline"}
+                className={cn("w-[280px] justify-start text-left font-normal")}
+              >
+                <section className="">
+                  <CalendarIcon className="mr-2 h-4 w-4 ml-5" />
+                  {<span></span>}
+                </section>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0">
+              <Calendar
+                selected={date}
+                onSelect={setDate}
+                mode="single"
+                initialFocus
+              />
+            </PopoverContent>
+          </Popover>
         </div>
         <SheetFooter>
           <SheetClose asChild>
