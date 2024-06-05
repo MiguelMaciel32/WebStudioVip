@@ -53,7 +53,7 @@ export default function Sobre() {
         <Card className="group hover:bg-primary transition-all">
           <CardHeader className="group-hover:text-primary-foreground">
             <CardTitle>Contatos</CardTitle>
-            <CardDescription>
+            <CardDescription className="group-hover:text-primary-foreground">
               Contate-nos atraves de suas redes sociais mais utilizadas!
             </CardDescription>
           </CardHeader>
