@@ -1,3 +1,4 @@
+import AgendamentoTrigger from "@/components/AgendamentoTrigger";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
@@ -54,7 +55,9 @@ export default function PaginaDeProdutos() {
               </p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">Reservar</Button>
+              <AgendamentoTrigger>
+                <Button className="w-full">Reservar</Button>
+              </AgendamentoTrigger>
             </CardFooter>
           </Card>
         </section>

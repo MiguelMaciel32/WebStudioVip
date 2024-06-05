@@ -56,9 +56,7 @@ export default function PaginaDeProdutos() {
               <div>
                 <h1 className="font-bold">Alex - Cabeleleiro</h1>
                 <h1>LeoPoldina - Osasco</h1>
-                <AgendamentoTrigger>
-                  <Button className="mt-5">Marcar</Button>
-                </AgendamentoTrigger>
+                
               </div>
               <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
@@ -106,9 +104,7 @@ export default function PaginaDeProdutos() {
               <div>
                 <h1 className="font-bold">Dhan - tatto</h1>
                 <h1>Jardim Belval - Barueri</h1>
-                <AgendamentoTrigger>
-                  <Button className="mt-5">Marcar</Button>
-                </AgendamentoTrigger>
+                
               </div>
               <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
@@ -133,9 +129,7 @@ export default function PaginaDeProdutos() {
               <div>
                 <h1 className="font-bold">Dhan - tatto</h1>
                 <h1>Jardim Belval - Barueri</h1>
-                <AgendamentoTrigger>
-                  <Button className="mt-5">Marcar</Button>
-                </AgendamentoTrigger>
+              
               </div>
               <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
@@ -160,9 +154,7 @@ export default function PaginaDeProdutos() {
               <div>
                 <h1 className="font-bold">Dhan - tatto</h1>
                 <h1>Jardim Belval - Barueri</h1>
-                <AgendamentoTrigger>
-                  <Button className="mt-5">Marcar</Button>
-                </AgendamentoTrigger>
+                
               </div>
               <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
