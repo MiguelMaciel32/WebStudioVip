@@ -61,14 +61,14 @@ export default function Sobre() {
             <Button
               size={"icon"}
               variant={"outline"}
-              className="group-hover:text-white"
+              className="dark:group-hover:text-white group-hover:text-zinc-900"
             >
               <Instagram />
             </Button>
             <Button
               size={"icon"}
               variant={"outline"}
-              className="group-hover:text-white"
+              className="dark:group-hover:text-white group-hover:text-zinc-900"
             >
               <Phone />
             </Button>
