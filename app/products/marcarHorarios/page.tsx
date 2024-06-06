@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 export default function MarcarHorario() {
   return (
     <main className="w-full h-screen overflow-hidden">
-      <div className="mt-4 relative w-fit">
+      <section className="mt-4 relative w-fit">
         <Link href={"/products"}>
           <Button
             variant={"outline"}
@@ -16,7 +16,7 @@ export default function MarcarHorario() {
             <ArrowBigLeft />
           </Button>
         </Link>
-      </div>
+      </section>
       <section className="flex flex-col p-6 justify-center items-center w-full h-screen">
         <form className="space-y-4">
           <h1>Title</h1>

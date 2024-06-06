@@ -9,7 +9,7 @@ export default function Login() {
   return (
     <main className="flex w-full h-screen overflow-y-hidden">
       
-      <div className="flex flex-col w-1/2  gap-5 container p-16 justify-center grow md:w-full">
+      <section className="flex flex-col w-1/2  gap-5 container p-16 justify-center grow md:w-full">
         <h1 className="font-bold flex justify-center text-3xl tracking-tighter leading-none text-center md:text-5xl">
           Conecte-se!
         </h1>
@@ -22,7 +22,7 @@ export default function Login() {
           <Input placeholder="Telefone" type="tell" />
           <Input placeholder="Senha" type="password" />
         </form>
-        <div className="flex flex-col gap-2 justify-center">
+        <section className="flex flex-col gap-2 justify-center">
           <Button>Login</Button>
           <Link className="w-full flex" href={"/login/business"}>
           <Button variant={"secondary"} className="w-full">Entrar com uma conta empresarial</Button>
@@ -32,9 +32,9 @@ export default function Login() {
               Ou crie uma conta pessoal nova!
             </Button>
           </Link>
-        </div>
-      </div>
-      <div className="bg-zinc-900 hidden justify-center items-center flex-col font-bold md:flex md:h-screen md:w-full">
+        </section>
+      </section>
+      <section className="bg-zinc-900 hidden justify-center items-center flex-col font-bold md:flex md:h-screen md:w-full">
         <h1 className="text-5xl text-white tracking-tighter">
           Bem-vindo
           <span className="link-color"> de volta</span>
@@ -46,7 +46,7 @@ export default function Login() {
           alt="Login "
           src={"/undraw_access_account_re_8spm.svg"}
         />
-      </div>
+      </section>
     </main>
   );
 }

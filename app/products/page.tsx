@@ -30,14 +30,14 @@ export default function PaginaDeProdutos() {
                 />
             </CardHeader>
             <CardContent className="flex space-y-4">
-              <div>
+              <section>
                 <h1 className="font-bold">Dhan - tatto</h1>
                 <h1>Jardim Belval - Barueri</h1>
-              </div>
-              <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+              </section>
+              <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
                 <p>5.0</p>
-              </div>
+              </section>
             </CardContent>
           </Card>
               </Link>
@@ -53,15 +53,15 @@ export default function PaginaDeProdutos() {
                 />
             </CardHeader>
             <CardContent className="flex space-y-4">
-              <div>
+              <section>
                 <h1 className="font-bold">Alex - Cabeleleiro</h1>
                 <h1>LeoPoldina - Osasco</h1>
                 
-              </div>
-              <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+              </section>
+              <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
                 <p>5.0</p>
-              </div>
+              </section>
             </CardContent>
           </Card>
                 </Link>
@@ -77,14 +77,14 @@ export default function PaginaDeProdutos() {
               />
             </CardHeader>
             <CardContent className="flex space-y-4">
-              <div>
+              <section>
                 <h1 className="font-bold ">Helena - Spa</h1>
                 <h1>Jandira</h1>
-              </div>
-              <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+              </section>
+              <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
                 <p>5.0</p>
-              </div>
+              </section>
             </CardContent>
           </Card>
           </Link>
@@ -101,15 +101,15 @@ export default function PaginaDeProdutos() {
                 />
             </CardHeader>
             <CardContent className="flex space-y-4">
-              <div>
+              <section>
                 <h1 className="font-bold">Dhan - tatto</h1>
                 <h1>Jardim Belval - Barueri</h1>
                 
-              </div>
-              <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+              </section>
+              <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
                 <p>5.0</p>
-              </div>
+              </section>
             </CardContent>
             
           </Card>
@@ -126,15 +126,15 @@ export default function PaginaDeProdutos() {
                 />
             </CardHeader>
             <CardContent className="flex space-y-4">
-              <div>
+              <section>
                 <h1 className="font-bold">Dhan - tatto</h1>
                 <h1>Jardim Belval - Barueri</h1>
               
-              </div>
-              <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+              </section>
+              <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
                 <p>5.0</p>
-              </div>
+              </section>
             </CardContent>
           </Card>
           </Link>
@@ -151,15 +151,15 @@ export default function PaginaDeProdutos() {
                 />
             </CardHeader>
             <CardContent className="flex space-y-4">
-              <div>
+              <section>
                 <h1 className="font-bold">Dhan - tatto</h1>
                 <h1>Jardim Belval - Barueri</h1>
                 
-              </div>
-              <div className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+              </section>
+              <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
                 <StarsIcon size={14} />
                 <p>5.0</p>
-              </div>
+              </section>
             </CardContent>
           </Card>
                 </Link>

@@ -8,14 +8,14 @@ import { ArrowBigLeft } from "lucide-react";
 export default function Business() {
   return (
     <main className="flex w-full h-screen overflow-y-hidden">
-      <div className="mt-4 relative">
+      <section className="mt-4 relative">
         <Link href={"/login"} >
         <Button variant={"outline"} size={"icon"} className="rounded-lg fixed inset-x-2">
           <ArrowBigLeft />
         </Button>
         </Link>
-      </div>
-      <div className="flex flex-col w-1/2  gap-5 container p-16 justify-center grow md:w-full">
+      </section>
+      <section className="flex flex-col w-1/2  gap-5 container p-16 justify-center grow md:w-full">
         <h1 className="font-bold flex justify-center text-3xl tracking-tighter leading-none text-center md:text-5xl">
           Acesse sua conta empresarial!
         </h1>
@@ -29,16 +29,16 @@ export default function Business() {
           <Input placeholder="Telefone" type="number" />
           <Input placeholder="Senha" type="password" />
         </form>
-        <div className="flex flex-col gap-2 justify-center">
+        <section className="flex flex-col gap-2 justify-center">
           <Button>Entrar</Button>
           <Link href={"/signup/business"}>
             <Button variant={"link"} className="w-full text-center">
               Ou crie uma conta nova empresarial!
             </Button>
           </Link>
-        </div>
-      </div>
-      <div className="bg-zinc-900 hidden justify-center items-center flex-col font-bold md:flex md:h-screen md:w-full">
+        </section>
+      </section>
+      <section className="bg-zinc-900 hidden justify-center items-center flex-col font-bold md:flex md:h-screen md:w-full">
         <h1 className="text-5xl text-white tracking-tighter text-center mx-4">
           Seus clientes te esperam
           <span className="link-color"> de volta</span>
@@ -50,7 +50,7 @@ export default function Business() {
           alt="Login "
           src={"/undraw_access_account_re_8spm.svg"}
         />
-      </div>
+      </section>
     </main>
   );
 }

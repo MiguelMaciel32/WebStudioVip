@@ -31,7 +31,7 @@ export default function Login() {
 
   return (
     <main className="flex w-full h-screen overflow-y-hidden">
-      <div className="flex flex-col gap-5 container p-16 justify-center">
+      <section className="flex flex-col gap-5 container p-16 justify-center">
         <h1 className="font-bold flex justify-center text-3xl tracking-tighter leading-none text-center md:text-5xl">
           Cadastre-se!
         </h1>
@@ -44,7 +44,7 @@ export default function Login() {
           <Input placeholder="Telefone" type="text" />
           <Input placeholder="Senha" />
         </form>
-        <div className="flex flex-col gap-2 justify-center">
+        <section className="flex flex-col gap-2 justify-center">
           <Button className="gap-2" type="submit" onClick={cadastrarUsuario}>
             <Sparkles size={16} />
             Criar minha conta!
@@ -54,9 +54,9 @@ export default function Login() {
               Ou entre em uma conta existente!!
             </Button>
           </Link>
-        </div>
-      </div>
-      <div className="bg-zinc-900 hidden justify-center items-center flex-col font-bold md:flex md:h-screen md:w-full">
+        </section>
+      </section>
+      <section className="bg-zinc-900 hidden justify-center items-center flex-col font-bold md:flex md:h-screen md:w-full">
         <h1 className="text-5xl text-white text-center">
           Prepare-se
           <span className="text-violet-300"> pra uma nova jornada</span>
@@ -69,7 +69,7 @@ export default function Login() {
           alt="Login "
           src={"/undraw_logic_re_nyb4.svg"}
         />
-      </div>
+      </section>
     </main>
   );
 }
