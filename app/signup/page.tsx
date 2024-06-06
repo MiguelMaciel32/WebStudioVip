@@ -16,7 +16,10 @@ type User = {
   password: string;
 };
 
+
+
 export default function Login() {
+
   /**
    * Essa funçao retorna uma mensagem (toast) como se fosese uma autenticacao do usurio
    * @param e
@@ -39,9 +42,12 @@ export default function Login() {
           Comece a utilizar nossa plataforma com total liberdade apos realizar o
           cadastro em nossos serviços.
         </p>
-        <form className="space-y-2" onSubmit={(e) => cadastrarUsuario(e)}>
+        <form className="space-y-2">
           <Input placeholder="Nome" />
-          <Input placeholder="CPF" />
+          <Input 
+          type="text"
+          placeholder="CPF"  
+          />
           <Input placeholder="Email" />
           <Input placeholder="Telefone" type="text" />
           <Input placeholder="Senha" />
