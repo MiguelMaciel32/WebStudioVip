@@ -26,7 +26,6 @@ export default function Business() {
         <form className="space-y-2">
           <Input placeholder="CNPJ" type="number" />
           <Input placeholder="Email" type="email" />
-          <Input placeholder="Telefone" type="number" />
           <Input placeholder="Senha" type="password" />
         </form>
         <section className="flex flex-col gap-2 justify-center">
