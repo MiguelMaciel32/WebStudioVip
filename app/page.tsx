@@ -62,6 +62,16 @@ export default function Home() {
                   <SelectItem value="loc1">Barueri</SelectItem>
                   <SelectItem value="loc2">Itapevi</SelectItem>
                   <SelectItem value="loc3">Cotia</SelectItem>
+                  <SelectItem value="loc4">Jandira</SelectItem>
+                  <SelectItem value="loc5">Osasco</SelectItem>
+                  <SelectItem value="loc6">Barra Funda</SelectItem>
+                  <SelectItem value="loc7">São Paulo</SelectItem>
+                  <SelectItem value="loc8">Guarulhos</SelectItem>
+                  <SelectItem value="loc9">Suzano</SelectItem>
+                  <SelectItem value="loc10">Vargem Grande</SelectItem>
+                  <SelectItem value="loc11">São Roque</SelectItem>
+                  <SelectItem value="loc12">Lapa</SelectItem>
+
                 </SelectContent>
               </Select>
 
@@ -192,7 +202,7 @@ export default function Home() {
           <section className="mt-12 mx- flex justify-center">
             <Carousel className="w-full max-w-sm md:max-w-6xl">
               <CarouselContent>
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="basis-2/5">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -295,6 +305,356 @@ export default function Home() {
                     </Card>
                   </section>
                 </CarouselItem>
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
               </CarouselContent>
               <CarouselPrevious />
               <CarouselNext />
@@ -303,7 +663,7 @@ export default function Home() {
 
           <section className="flex justify-center px-6 mt-10">
             <h1 className="font-bold text-2xl text-center">
-              Alguma duvida? Nos te ajudamos!
+            Alguma dúvida? Nós te ajudamos! 
             </h1>
           </section>
 

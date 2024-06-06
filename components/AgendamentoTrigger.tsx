@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
@@ -22,6 +21,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import React from "react";
+import { useToast } from "./ui/use-toast";
 
 export default function AgendamentoTrigger({
   children,
@@ -29,6 +29,7 @@ export default function AgendamentoTrigger({
   children: React.ReactNode;
 }) {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const { toast } = useToast();
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
@@ -53,32 +54,17 @@ export default function AgendamentoTrigger({
               Telefone
             </Label>
             <Input id="username" className="col-span-3" />
-          </div>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                variant={"outline"}
-                className={cn("w-[280px] justify-start text-left font-normal")}
-              >
-                <section className="">
-                  <CalendarIcon className="mr-2 h-4 w-4 ml-5" />
-                  {<span></span>}
-                </section>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0">
-              <Calendar
-                selected={date}
-                onSelect={setDate}
-                mode="single"
-                initialFocus
-              />
-            </PopoverContent>
-          </Popover>
+            <label className="text-right">
+              Data
+            </label>
+            <Input className="w-full col-span-2" type="date" />
+          </div> 
         </div>
         <SheetFooter>
           <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
+            <Button type="submit" onClick={() => {
+              toast({ title: "Agendamento realizado com sucesso!"})
+            }} >Agendar</Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

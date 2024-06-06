@@ -19,7 +19,6 @@ export default function Login() {
         </p>
         <form className="space-y-2">
           <Input placeholder="Email" />
-          <Input placeholder="Telefone" type="tell" />
           <Input placeholder="Senha" type="password" />
         </form>
         <section className="flex flex-col gap-2 justify-center">

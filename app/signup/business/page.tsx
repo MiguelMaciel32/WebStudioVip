@@ -24,6 +24,7 @@ export default function BusinessCadastro() {
           login em nossos serviços.
         </p>
         <form className="space-y-2">
+          <Input placeholder="Nome da Empresa" />
           <Input placeholder="CNPJ" type="number" />
           <Input placeholder="Email" />
           <Input placeholder="Telefone" type="number" />

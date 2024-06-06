@@ -40,6 +40,8 @@ export default function Login() {
           cadastro em nossos serviços.
         </p>
         <form className="space-y-2" onSubmit={(e) => cadastrarUsuario(e)}>
+          <Input placeholder="Nome" />
+          <Input placeholder="CPF" />
           <Input placeholder="Email" />
           <Input placeholder="Telefone" type="text" />
           <Input placeholder="Senha" />
