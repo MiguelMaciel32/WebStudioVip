@@ -59,6 +59,12 @@ export default function AgendamentoTrigger({
             </label>
             <Input className="w-full col-span-2" type="date" />
           </div> 
+          <div className="flex">
+            <Label className="text-right mx-2">
+              Horario
+            </Label>
+            <Input type="time" className="w-full col-span-2" />
+          </div>
         </div>
         <SheetFooter>
           <SheetClose asChild>
