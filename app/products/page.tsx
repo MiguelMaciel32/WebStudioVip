@@ -17,9 +17,9 @@ export default function PaginaDeProdutos() {
           Que tal marcar com um dos profissionais disponíveis em nossa
           plataforma?
         </p>
-        <section className="grid grid-cols-1 place-items-center md:grid-cols-4 justify-center gap-6">
+        <section className="grid grid-cols-1 place-items-center md:grid-cols-4 justify-center gap-24">
           <Link href={"/sobreempresa"}>
-          <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
+          <Card className="w-80 h-max  mt-12   hover:transition-all">
             <CardHeader>
               <Image
                 height={320}
@@ -42,7 +42,7 @@ export default function PaginaDeProdutos() {
           </Card>
               </Link>
     <Link href={"/sobreempresa"}>
-          <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
+          <Card className="w-80 h-max  mt-12   hover:transition-all">
             <CardHeader>
               <Image
                 height={320}
@@ -66,7 +66,7 @@ export default function PaginaDeProdutos() {
           </Card>
                 </Link>
                 <Link href={"/sobreempresa"}>
-          <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
+          <Card className="w-80 h-max  mt-12   hover:transition-all">
             <CardHeader>
               <Image
                 height={320}
@@ -90,7 +90,7 @@ export default function PaginaDeProdutos() {
           </Link>
      
         <Link href={"/sobreempresa"}>
-          <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
+          <Card className="w-80 h-max  mt-12  hover:transition-all">
             <CardHeader>
               <Image
                 height={320}
@@ -115,7 +115,7 @@ export default function PaginaDeProdutos() {
           </Card>
           </Link>
            <Link href={"/sobreempresa"}>
-   <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
+   <Card className="w-80 h-max  mt-12   hover:transition-all">
             <CardHeader>
               <Image
                 height={320}
@@ -140,7 +140,7 @@ export default function PaginaDeProdutos() {
           </Link>
       
            <Link href={"/sobreempresa"}>
-          <Card className="w-80 h-max  mt-12 hover:size-11/12 hover:transition-all">
+          <Card className="w-80 h-max  mt-12   hover:transition-all">
             <CardHeader>
               <Image
                 height={320}
