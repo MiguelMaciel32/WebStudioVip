@@ -1,6 +1,11 @@
 # Next.js Website
+ 🔥TCC🔥
 
-Este é um projeto de website desenvolvido com Next.js. O objetivo deste projeto é um Trabalho pro meu TCC.
+
+ Este é um projeto de website desenvolvido com Next.js. O objetivo deste projeto é um Trabalho pro meu TCC.✅ 
+
+FIEB - 2024✅ 
+Luis Miguel Maciel Dos Santos✅ 
 ## Índice
 
 - [Introdução](#introdução)
@@ -22,7 +27,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 - Você instalou o [Node.js](https://nodejs.org/) (versão 14.x ou superior)
 - Você possui um gerenciador de pacotes, como npm ou yarn
 - Npm Install
-- Npm Install Next Js
+- Npm run dev
 
 ## Instalação
 
@@ -30,4 +35,4 @@ Para instalar o projeto, siga estas etapas:
 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/MiguelMaciel32/Next-Js-Studio-Vip
