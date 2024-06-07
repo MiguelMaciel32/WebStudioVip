@@ -9,7 +9,6 @@ Luis Miguel Maciel Dos Santos✅
 ## Índice
 
 - [Introdução](#introdução)
-- [Pré-requisitos](#pré-requisitos)
 - [Instalação](#instalação)
 - [Scripts](#scripts)
 - [Estrutura do Projeto](#estrutura-do-projeto)
@@ -20,14 +19,6 @@ Luis Miguel Maciel Dos Santos✅
 
 Este projeto é uma aplicação web desenvolvida com [Next.js](https://nextjs.org/), um framework React para produção que permite renderização híbrida estática e servidor. Next.js facilita a construção de websites rápidos e escaláveis, com um excelente suporte a SEO.
 
-## Pré-requisitos
-
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
-
-- Você instalou o [Node.js](https://nodejs.org/) (versão 14.x ou superior)
-- Você possui um gerenciador de pacotes, como npm ou yarn
-- Npm Install
-- Npm run dev
 
 ## Instalação
 
