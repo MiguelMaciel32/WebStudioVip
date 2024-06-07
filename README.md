@@ -20,6 +20,7 @@ Luis Miguel Maciel Dos Santos✅
 Este projeto é uma aplicação web desenvolvida com [Next.js](https://nextjs.org/), um framework React para produção que permite renderização híbrida estática e servidor. Next.js facilita a construção de websites rápidos e escaláveis, com um excelente suporte a SEO.
 
 
+
 ## Instalação
 
 Para instalar o projeto, siga estas etapas:
