@@ -65,6 +65,14 @@ export default function AgendamentoTrigger({
             </Label>
             <Input type="time" className="w-full col-span-2" />
           </div>
+          <div>
+            <Label >
+              Notificação
+            </Label>
+
+
+            
+          </div>
         </div>
         <SheetFooter>
           <SheetClose asChild>
