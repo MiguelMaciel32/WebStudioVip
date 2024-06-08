@@ -28,7 +28,7 @@ import {
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";
+} from "@/components/ui/select";  
 
 export default function AgendamentoTrigger({
   children,
@@ -67,26 +67,10 @@ export default function AgendamentoTrigger({
             <Input className="w-full col-span-2" type="date" />
           </section> 
           <section className="flex">
-            <Label className="text-right mx-2 mt-3">
+            <Label className="text-right mx-5 mt-3">
               Horario
             </Label>
-            <Input type="time" className="w-full col-span-2" />
-          </section>
-          <section className="flex">
-            <Label className="text-right mx-1 mt-2">
-              Notificação
-            </Label>
-
-            <Select>
-                <SelectTrigger className="">
-                  <SelectValue placeholder="Notificação" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="servicos_tatu">Sms</SelectItem>
-                  <SelectItem value="servicos_cabelo">Whatsapp</SelectItem>
-                </SelectContent>
-              </Select>
-
+            <Input type="time" className="w-full col-span-2 w-40" />
           </section>
         </section>
         <SheetFooter>
