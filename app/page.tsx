@@ -39,10 +39,7 @@ export default function Home() {
                 Studio Vip
               </h1>
               <h5>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+              Oferecemos uma solução ideal para empreendedores. Esta plataforma permite o agendamento online e possui um sistema financeiro, facilitando a gestão de horários e melhorando a experiência do cliente.
               </h5>
               <Link href="/login">
                 <Button className="gap-2 mt-4 items-center">
@@ -105,10 +102,7 @@ export default function Home() {
                 Agendamento Online
               </h1>
               <p className="mt-2 text-muted-foreground ">
-                s simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type
+              Proporcionamos aos clientes acesso direto à agenda dos profissionais, simplificando o agendamento de serviços. Com esta funcionalidade, os usuários podem visualizar os horários disponíveis para atendimento e selecionar o serviço desejado de forma conveniente e rápida 
               </p>
               <section className="flex gap-7 mt-8 justify-center items-center md:justify-start">
                 <section className="flex items-center justify-center flex-col ">
@@ -146,9 +140,7 @@ export default function Home() {
               <CardContent>
                 <p className="w-40">
                   {" "}
-                  is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s
+                  Uma loja virtual integrada permite a venda de produtos e oferece novas oportunidades de receita e crescimento orgânico para empreendedores
                 </p>
               </CardContent>
             </Card>
@@ -161,9 +153,7 @@ export default function Home() {
               <CardContent>
                 <p className="w-40">
                   {" "}
-                  is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s
+                  O agendamento de serviços é facilitado, permitindo que os clientes escolham horários e serviços diretamente na agenda dos profissionais com poucos cliques. 
                 </p>
               </CardContent>
             </Card>
@@ -176,9 +166,7 @@ export default function Home() {
               <CardContent>
                 <p className="w-40">
                   {" "}
-                  is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s
+                 Oferece uma área financeira intuitiva para organizar gastos e ganhos, além de uma função exclusiva para declarar o imposto de renda. 
                 </p>
               </CardContent>
             </Card>
@@ -191,9 +179,7 @@ export default function Home() {
               <CardContent>
                 <p className="w-40">
                   {" "}
-                  is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s
+                  Impulsionar o negócio é simples com a Studio VIP, que oferece ferramentas de marketing para criar materiais promocionais e anúncios atraentes. 
                 </p>
               </CardContent>
             </Card>
