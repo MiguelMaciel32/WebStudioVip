@@ -201,7 +201,7 @@ export default function Home() {
           </section>
 
           <section className="mt-12 mx- flex justify-center">
-            <Carousel className="w-full max-w-sm md:max-w-6xl">
+            <Carousel className=" max-w-fit md:max-w-6xl">
               <CarouselContent>
                 <CarouselItem className="basis-2/5">
                   <section>
