@@ -85,6 +85,7 @@ export default function AgendamentoTrigger({
           <SheetClose asChild>
             <Button
               type="submit"
+              className="w-full"
               onClick={() => {
                 toast({ title: "Agendamento realizado com sucesso!" });
               }}

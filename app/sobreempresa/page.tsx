@@ -43,7 +43,7 @@ export default function Sobre() {
         <h2 className="font-bold tracking-tighter text-3xl md:text-4xl leading-tight text-start md:text-center mb-4">
           Serviços
         </h2>
-        <section className="border-y p-2 flex items-center gap-4">
+        <section className="border p-2 px-4 rounded flex items-center gap-4">
           <section className="flex-1 items-center">
             <p>Sobrancelha</p>
           </section>
@@ -55,7 +55,7 @@ export default function Sobre() {
             <Button variant={"secondary"}>Reservar</Button>
           </AgendamentoTrigger>
         </section>
-        <section className="border-y p-2 flex items-center gap-4">
+        <section className="border p-2 px-4 rounded flex items-center gap-4">
           <section className="flex-1 items-center">
             <p>Corte de cabelo</p>
           </section>
