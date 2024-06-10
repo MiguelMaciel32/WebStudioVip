@@ -39,10 +39,13 @@ export default function Home() {
                 Studio Vip
               </h1>
               <h5>
-              Oferecemos uma solução ideal para empreendedores. Esta plataforma permite o agendamento online e possui um sistema financeiro, facilitando a gestão de horários e melhorando a experiência do cliente.
+                Oferecemos uma solução ideal para empreendedores. Esta
+                plataforma permite o agendamento online e possui um sistema
+                financeiro, facilitando a gestão de horários e melhorando a
+                experiência do cliente.
               </h5>
-              <Link href="/login">
-                <Button className="gap-2 mt-4 items-center">
+              <Link href="/products">
+                <Button className="w-full md:w-fit gap-2 mt-4 items-center">
                   <Sparkles size={16} />
                   Inicie sua jornada!
                 </Button>
@@ -68,7 +71,6 @@ export default function Home() {
                   <SelectItem value="loc10">Vargem Grande</SelectItem>
                   <SelectItem value="loc11">São Roque</SelectItem>
                   <SelectItem value="loc12">Lapa</SelectItem>
-
                 </SelectContent>
               </Select>
 
@@ -102,7 +104,11 @@ export default function Home() {
                 Agendamento Online
               </h1>
               <p className="mt-2 text-muted-foreground ">
-              Proporcionamos aos clientes acesso direto à agenda dos profissionais, simplificando o agendamento de serviços. Com esta funcionalidade, os usuários podem visualizar os horários disponíveis para atendimento e selecionar o serviço desejado de forma conveniente e rápida 
+                Proporcionamos aos clientes acesso direto à agenda dos
+                profissionais, simplificando o agendamento de serviços. Com esta
+                funcionalidade, os usuários podem visualizar os horários
+                disponíveis para atendimento e selecionar o serviço desejado de
+                forma conveniente e rápida
               </p>
               <section className="flex gap-7 mt-8 justify-center items-center md:justify-start">
                 <section className="flex items-center justify-center flex-col ">
@@ -123,11 +129,12 @@ export default function Home() {
 
           <section className="mt-24 flex justify-center flex-col">
             <h1 className="font-bold text-4xl md:text-6xl w-full text-center">
-            Agradecemos por escolher-nos.
+              Agradecemos por escolher-nos.
             </h1>
 
             <p className="font-medium text-center mt-4 mx-4">
-            Agendamento e gestão financeira para empreendedores com excelência e serviços personalizados de qualidade superior.
+              Agendamento e gestão financeira para empreendedores com excelência
+              e serviços personalizados de qualidade superior.
             </p>
           </section>
 
@@ -140,7 +147,9 @@ export default function Home() {
               <CardContent>
                 <p className="w-40">
                   {" "}
-                  Uma loja virtual integrada permite a venda de produtos e oferece novas oportunidades de receita e crescimento orgânico para empreendedores
+                  Uma loja virtual integrada permite a venda de produtos e
+                  oferece novas oportunidades de receita e crescimento orgânico
+                  para empreendedores
                 </p>
               </CardContent>
             </Card>
@@ -153,7 +162,9 @@ export default function Home() {
               <CardContent>
                 <p className="w-40">
                   {" "}
-                  O agendamento de serviços é facilitado, permitindo que os clientes escolham horários e serviços diretamente na agenda dos profissionais com poucos cliques. 
+                  O agendamento de serviços é facilitado, permitindo que os
+                  clientes escolham horários e serviços diretamente na agenda
+                  dos profissionais com poucos cliques.
                 </p>
               </CardContent>
             </Card>
@@ -166,7 +177,9 @@ export default function Home() {
               <CardContent>
                 <p className="w-40">
                   {" "}
-                 Oferece uma área financeira intuitiva para organizar gastos e ganhos, além de uma função exclusiva para declarar o imposto de renda. 
+                  Oferece uma área financeira intuitiva para organizar gastos e
+                  ganhos, além de uma função exclusiva para declarar o imposto
+                  de renda.
                 </p>
               </CardContent>
             </Card>
@@ -179,7 +192,9 @@ export default function Home() {
               <CardContent>
                 <p className="w-40">
                   {" "}
-                  Impulsionar o negócio é simples com a Studio VIP, que oferece ferramentas de marketing para criar materiais promocionais e anúncios atraentes. 
+                  Impulsionar o negócio é simples com a Studio VIP, que oferece
+                  ferramentas de marketing para criar materiais promocionais e
+                  anúncios atraentes.
                 </p>
               </CardContent>
             </Card>
@@ -318,6 +333,31 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
 
                 <CarouselItem className="basis-2/3">
                   <section>
@@ -345,7 +385,6 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-
                 <CarouselItem className="basis-2/3">
                   <section>
                     <Card className="w-fit  mt-12">
@@ -371,143 +410,6 @@ export default function Home() {
                     </Card>
                   </section>
                 </CarouselItem>
-
-
-                <CarouselItem className="basis-2/3">
-                  <section>
-                    <Card className="w-fit  mt-12">
-                      <CardHeader>
-                        <Image
-                          height={320}
-                          width={190}
-                          alt="Tatuagem tato servicos agendamentos"
-                          src={"/tatto.jpg"}
-                        />
-                      </CardHeader>
-                      <CardContent className="space-y-4 flex">
-                        <section>
-                          <h1 className="font-bold">Felix - Barbearia</h1>
-                          <h1>Centro - Itapevi</h1>
-                          <Button>Marcar</Button>
-                        </section>
-                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
-                          <StarsIcon size={14} />
-                          <p>5.0</p>
-                        </section>
-                      </CardContent>
-                    </Card>
-                  </section>
-                </CarouselItem>
-
-
-                <CarouselItem className="basis-2/3">
-                  <section>
-                    <Card className="w-fit  mt-12">
-                      <CardHeader>
-                        <Image
-                          height={320}
-                          width={190}
-                          alt="Tatuagem tato servicos agendamentos"
-                          src={"/tatto.jpg"}
-                        />
-                      </CardHeader>
-                      <CardContent className="space-y-4 flex">
-                        <section>
-                          <h1 className="font-bold">Felix - Barbearia</h1>
-                          <h1>Centro - Itapevi</h1>
-                          <Button>Marcar</Button>
-                        </section>
-                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
-                          <StarsIcon size={14} />
-                          <p>5.0</p>
-                        </section>
-                      </CardContent>
-                    </Card>
-                  </section>
-                </CarouselItem>
-
-
-
-                <CarouselItem className="basis-2/3">
-                  <section>
-                    <Card className="w-fit  mt-12">
-                      <CardHeader>
-                        <Image
-                          height={320}
-                          width={190}
-                          alt="Tatuagem tato servicos agendamentos"
-                          src={"/tatto.jpg"}
-                        />
-                      </CardHeader>
-                      <CardContent className="space-y-4 flex">
-                        <section>
-                          <h1 className="font-bold">Felix - Barbearia</h1>
-                          <h1>Centro - Itapevi</h1>
-                          <Button>Marcar</Button>
-                        </section>
-                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
-                          <StarsIcon size={14} />
-                          <p>5.0</p>
-                        </section>
-                      </CardContent>
-                    </Card>
-                  </section>
-                </CarouselItem>
-
-
-                <CarouselItem className="basis-2/3">
-                  <section>
-                    <Card className="w-fit  mt-12">
-                      <CardHeader>
-                        <Image
-                          height={320}
-                          width={190}
-                          alt="Tatuagem tato servicos agendamentos"
-                          src={"/tatto.jpg"}
-                        />
-                      </CardHeader>
-                      <CardContent className="space-y-4 flex">
-                        <section>
-                          <h1 className="font-bold">Felix - Barbearia</h1>
-                          <h1>Centro - Itapevi</h1>
-                          <Button>Marcar</Button>
-                        </section>
-                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
-                          <StarsIcon size={14} />
-                          <p>5.0</p>
-                        </section>
-                      </CardContent>
-                    </Card>
-                  </section>
-                </CarouselItem>
-
-
-                <CarouselItem className="basis-2/3">
-                  <section>
-                    <Card className="w-fit  mt-12">
-                      <CardHeader>
-                        <Image
-                          height={320}
-                          width={190}
-                          alt="Tatuagem tato servicos agendamentos"
-                          src={"/tatto.jpg"}
-                        />
-                      </CardHeader>
-                      <CardContent className="space-y-4 flex">
-                        <section>
-                          <h1 className="font-bold">Felix - Barbearia</h1>
-                          <h1>Centro - Itapevi</h1>
-                          <Button>Marcar</Button>
-                        </section>
-                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
-                          <StarsIcon size={14} />
-                          <p>5.0</p>
-                        </section>
-                      </CardContent>
-                    </Card>
-                  </section>
-                </CarouselItem>
-
 
                 <CarouselItem className="basis-2/3">
                   <section>
@@ -587,6 +489,31 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
 
                 <CarouselItem className="basis-2/3">
                   <section>
@@ -614,6 +541,31 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
 
                 <CarouselItem className="basis-2/3">
                   <section>
@@ -641,6 +593,57 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
+
+                <CarouselItem className="basis-2/3">
+                  <section>
+                    <Card className="w-fit  mt-12">
+                      <CardHeader>
+                        <Image
+                          height={320}
+                          width={190}
+                          alt="Tatuagem tato servicos agendamentos"
+                          src={"/tatto.jpg"}
+                        />
+                      </CardHeader>
+                      <CardContent className="space-y-4 flex">
+                        <section>
+                          <h1 className="font-bold">Felix - Barbearia</h1>
+                          <h1>Centro - Itapevi</h1>
+                          <Button>Marcar</Button>
+                        </section>
+                        <section className="flex bg-yellow-400 h-fit rounded-full px-2 items-center gap-1 -translate-y-4">
+                          <StarsIcon size={14} />
+                          <p>5.0</p>
+                        </section>
+                      </CardContent>
+                    </Card>
+                  </section>
+                </CarouselItem>
               </CarouselContent>
               <CarouselPrevious />
               <CarouselNext />
@@ -649,7 +652,7 @@ export default function Home() {
 
           <section className="flex justify-center px-6 mt-10">
             <h1 className="font-bold text-2xl text-center">
-            Alguma dúvida? Nós te ajudamos! 
+              Alguma dúvida? Nós te ajudamos!
             </h1>
           </section>
 

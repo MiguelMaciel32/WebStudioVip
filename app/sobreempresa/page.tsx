@@ -7,8 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { Instagram, Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 export default function Sobre() {
   return (
     <main className="flex flex-col justify-normal p-6 space-y-4">
@@ -26,17 +28,46 @@ export default function Sobre() {
           <h1 className="font-bold tracking-tighter text-3xl md:text-5xl leading-tight">
             Sobre a empresa
           </h1>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
             sunt, eveniet, maiores, porro exercitationem natus nemo expedita
             architecto adipisci voluptatibus soluta magnam optio cum molestias
             doloremque non nulla praesentium veniam?
           </p>
-          <AgendamentoTrigger>
+          <Link href={"/login"} className="flex w-full mt-4">
             <Button className="w-full">Reservar empresa</Button>
-          </AgendamentoTrigger>
+          </Link>
         </section>
       </header>
+      <section className="space-y-4">
+        <h2 className="font-bold tracking-tighter text-3xl md:text-4xl leading-tight text-start md:text-center mb-4">
+          Serviços
+        </h2>
+        <section className="border-y p-2 flex items-center gap-4">
+          <section className="flex-1 items-center">
+            <p>Sobrancelha</p>
+          </section>
+          <section>
+            <p className="font-medium">R$15</p>
+            <p className="text-muted-foreground">15min</p>
+          </section>
+          <AgendamentoTrigger>
+            <Button variant={"secondary"}>Reservar</Button>
+          </AgendamentoTrigger>
+        </section>
+        <section className="border-y p-2 flex items-center gap-4">
+          <section className="flex-1 items-center">
+            <p>Corte de cabelo</p>
+          </section>
+          <section>
+            <p className="font-medium">R$50</p>
+            <p className="text-muted-foreground">30min</p>
+          </section>
+          <AgendamentoTrigger>
+            <Button variant={"secondary"}>Reservar</Button>
+          </AgendamentoTrigger>
+        </section>
+      </section>
       <section className="space-y-4">
         <h2 className="font-bold tracking-tighter text-3xl md:text-4xl leading-tight text-start md:text-center">
           Veja mais informaçoes sobre essa empresa

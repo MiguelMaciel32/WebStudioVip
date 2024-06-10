@@ -28,7 +28,7 @@ import {
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";  
+} from "@/components/ui/select";
 
 export default function AgendamentoTrigger({
   children,
@@ -54,30 +54,43 @@ export default function AgendamentoTrigger({
             <Label htmlFor="name" className="text-right">
               Nome
             </Label>
-            <Input id="name" className="col-span-3" />
+            <Input
+              id="name"
+              className="col-span-3"
+              placeholder="John Doe"
+              type="text"
+            />
           </section>
           <section className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
+            <Label htmlFor="tel" className="text-right">
               Telefone
             </Label>
-            <Input id="username" className="col-span-3" />
-            <label className="text-right">
+            <Input
+              id="tel"
+              className=" col-span-3 "
+              placeholder="+55 (**) *********"
+              type="tel"
+            />
+            <Label htmlFor="date" className="text-right">
               Data
-            </label>
-            <Input className="w-full col-span-2" type="date" />
-          </section> 
-          <section className="flex">
-            <Label className="text-right mx-5 mt-3">
-              Horario
             </Label>
-            <Input type="time" className="w-full col-span-2 w-40" />
+            <Input className="w-full col-span-3" id="date" type="date" />
+          </section>
+          <section className="flex">
+            <Label className="text-right mx-5 mt-3 ">Horario</Label>
+            <Input type="time" className="w-full col-span-2 " />
           </section>
         </section>
         <SheetFooter>
           <SheetClose asChild>
-            <Button type="submit" onClick={() => {
-              toast({ title: "Agendamento realizado com sucesso!"})
-            }} >Agendar</Button>
+            <Button
+              type="submit"
+              onClick={() => {
+                toast({ title: "Agendamento realizado com sucesso!" });
+              }}
+            >
+              Agendar
+            </Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

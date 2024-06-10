@@ -6,20 +6,10 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { toast } from "@/components/ui/use-toast";
-import { set } from "react-hook-form";
-
-type User = {
-  email: string;
-  phone: string;
-  password: string;
-};
-
-
 
 export default function Login() {
-
   /**
    * Essa funçao retorna uma mensagem (toast) como se fosese uma autenticacao do usurio
    * @param e
@@ -44,10 +34,7 @@ export default function Login() {
         </p>
         <form className="space-y-2">
           <Input placeholder="Nome" />
-          <Input 
-          type="text"
-          placeholder="CPF"  
-          />
+          <Input type="text" placeholder="CPF" />
           <Input placeholder="Email" />
           <Input placeholder="Telefone" type="text" />
           <Input placeholder="Senha" />
@@ -59,7 +46,7 @@ export default function Login() {
           </Button>
           <Link href={"/login"} className="flex">
             <Button variant={"link"} className="flex justify-center w-full">
-              Ou entre em uma conta existente!!
+              Ou entre em uma conta existente!
             </Button>
           </Link>
         </section>
