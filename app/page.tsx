@@ -13,9 +13,9 @@ import { SparkleIcon, Sparkles, StarsIcon } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselItem,
 } from "@/components/ui/carousel";
 import SearchInputWithIcon from "@/components/Input-Icon";
 import { Mail } from "lucide-react";
@@ -200,10 +200,10 @@ export default function Home() {
             </Card>
           </section>
 
-          <section className="mt-12 mx- flex justify-center">
-            <Carousel className=" max-w-fit md:max-w-6xl">
-              <CarouselContent>
-                <CarouselItem className="basis-2/5">
+          <section className="mt-12 flex justify-center">
+            <Carousel className=" max-w-xs md:max-w-6xl items-center ">
+              <CarouselContent className="">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -229,7 +229,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -255,7 +255,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -281,7 +281,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -307,7 +307,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -333,7 +333,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -359,7 +359,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -385,7 +385,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -411,7 +411,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -437,7 +437,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -463,7 +463,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -489,7 +489,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -515,7 +515,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -541,7 +541,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -567,7 +567,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -593,7 +593,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
@@ -619,7 +619,7 @@ export default function Home() {
                   </section>
                 </CarouselItem>
 
-                <CarouselItem className="basis-2/3">
+                <CarouselItem className="">
                   <section>
                     <Card className="w-fit  mt-12">
                       <CardHeader>
