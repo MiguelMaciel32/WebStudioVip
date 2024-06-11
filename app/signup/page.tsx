@@ -8,7 +8,6 @@ import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 
-
 export default function Login() {
   const [cpf, setCpf] = useState<string>("");
 
