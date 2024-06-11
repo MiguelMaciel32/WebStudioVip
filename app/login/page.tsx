@@ -1,9 +1,18 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { ArrowBigLeft } from "lucide-react";
+import { toast } from "@/components/ui/use-toast";
+
+const LoginMsg = () => {
+  toast({
+    title: "Studio Vip",
+    description: "Bem-vindo de Volta!",
+  });
+};
 
 export default function Login() {
   return (
@@ -22,7 +31,7 @@ export default function Login() {
           <Input placeholder="Senha" type="password" />
         </form>
         <section className="flex flex-col gap-2 justify-center">
-          <Button>Login</Button>
+          <Button onClick={LoginMsg}>Login</Button>
           <Link className="w-full flex" href={"/login/business"}>
           <Button variant={"secondary"} className="w-full">Entrar com uma conta empresarial</Button>
           </Link>
