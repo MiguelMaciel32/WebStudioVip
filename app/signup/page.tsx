@@ -2,21 +2,56 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
 import { Input } from "@/components/ui/input";
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 
 export default function Login() {
+  const [cpf, setCpf] = useState<string>("");
+
   /**
-   * Essa funçao retorna uma mensagem (toast) como se fosese uma autenticacao do usurio
-   * @param e
+   * Função para validar CPF
+   * @param {string} cpf
+   * @returns {boolean}
+   */
+  const validarCPF = (cpf: string): boolean => {
+    cpf = cpf.replace(/[^\d]+/g, ""); /* tirar letras e caracterrias especiais */
+    if (cpf.length !== 11) return false; /* quantidade numero digitado para verificar caso passe vira false*/
+
+    let soma = 0;
+    let resto;
+    for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.substring(9, 10))) return false;
+
+    soma = 0;
+    for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.substring(10, 11))) return false;
+
+    return true;
+  };
+
+  /**
+   * Essa função retorna uma mensagem (toast) como se fosse uma autenticação do usuário
+   * @param {FormEvent} e
    */
   const cadastrarUsuario = (e: FormEvent) => {
-    // prevenir recarregamento da pagina
+    // Prevenir recarregamento da página
     e.preventDefault();
+
+    // Validação do CPF
+    if (!validarCPF(cpf)) {
+      toast({
+        description: "CPF inválido!",
+      });
+      return;
+    }
+
     toast({
       description: "Conta criada com sucesso!",
     });
@@ -29,21 +64,26 @@ export default function Login() {
           Cadastre-se!
         </h1>
         <p className="text-muted-foreground leading-relaxed text-center">
-          Comece a utilizar nossa plataforma com total liberdade apos realizar o
+          Comece a utilizar nossa plataforma com total liberdade após realizar o
           cadastro em nossos serviços.
         </p>
-        <form className="space-y-2">
+        <form className="space-y-2" onSubmit={cadastrarUsuario}>
           <Input placeholder="Nome" />
-          <Input type="text" placeholder="CPF" />
+          <Input
+            type="text"
+            placeholder="CPF"
+            value={cpf}
+            onChange={(e) => setCpf(e.target.value)}
+          />
           <Input placeholder="Email" />
           <Input placeholder="Telefone" type="text" />
           <Input placeholder="Senha" />
-        </form>
-        <section className="flex flex-col gap-2 justify-center">
-          <Button className="gap-2" type="submit" onClick={cadastrarUsuario}>
+          <Button className="gap-2 justify-center mx-44" type="submit">
             <Sparkles size={16} />
             Criar minha conta!
           </Button>
+        </form>
+        <section className="flex flex-col gap-2 justify-center">
           <Link href={"/login"} className="flex">
             <Button variant={"link"} className="flex justify-center w-full">
               Ou entre em uma conta existente!
