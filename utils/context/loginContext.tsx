@@ -9,7 +9,7 @@ interface IUtils {
   toggleSignIn: () => void;
 }
 
-const UtilsContext = createContext<IUtils>({
+export const UtilsContext = createContext<IUtils>({
   isLogged: false,
   toggleSignIn: () => {},
 });
@@ -30,8 +30,5 @@ export const UtilsProvider = ({ children }: { children: React.ReactNode }) => {
 
 export const useUtilsContext = () => {
   const context = useContext(UtilsContext);
-  if (context === undefined) {
-    throw new Error("You must provide a context");
-  }
   return context;
 };

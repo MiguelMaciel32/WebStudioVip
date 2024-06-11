@@ -3,9 +3,6 @@ import Image from "next/image";
 
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { useUtilsContext } from "@/utils/context/loginContext";
-
-const { toggleSignIn } = useUtilsContext()
 
 
 export default function Login() {
