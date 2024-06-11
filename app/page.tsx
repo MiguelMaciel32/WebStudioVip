@@ -128,7 +128,7 @@ export default function Home() {
           </section>
 
           <section className="mt-24 flex justify-center flex-col">
-            <h1 className="font-bold text-4xl md:text-6xl w-full text-center">
+            <h1 className="font-bold text-4xl md:text-6xl w-full text-center text-wrap">
               Agradecemos por escolher-nos.
             </h1>
 

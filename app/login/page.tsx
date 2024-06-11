@@ -3,7 +3,10 @@ import Image from "next/image";
 
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { ArrowBigLeft } from "lucide-react";
+import { useUtilsContext } from "@/utils/context/loginContext";
+
+const { toggleSignIn } = useUtilsContext()
+
 
 export default function Login() {
   return (

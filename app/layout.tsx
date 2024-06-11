@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
+import ClientSideProviders from "@/utils/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,19 +19,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        storageKey="infinity-theme"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <body className={inter.className}>
-          <Header />
-          {children}
-          <Toaster />
-        </body>
-      </ThemeProvider>
+      <ClientSideProviders>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          storageKey="infinity-theme"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <body className={inter.className}>
+            <Header />
+            {children}
+            <Toaster />
+          </body>
+        </ThemeProvider>
+      </ClientSideProviders>
     </html>
   );
 }
