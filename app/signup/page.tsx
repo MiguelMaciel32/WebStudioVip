@@ -78,7 +78,7 @@ export default function Login() {
           <Input placeholder="Email" />
           <Input placeholder="Telefone" type="text" />
           <Input placeholder="Senha" />
-          <Button className="gap-2 justify-center mx-44" type="submit">
+          <Button className="gap-2 justify-center w-full" type="submit">
             <Sparkles size={16} />
             Criar minha conta!
           </Button>
