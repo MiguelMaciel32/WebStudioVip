@@ -55,7 +55,7 @@ export default function ChatIA() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <section className="fixed bottom-2 right-2 size-12 rounded-full flex justify-center items-center bg-white ">
+        <section className="fixed bottom-2 right-2 size-12 rounded-full flex justify-center items-center bg-primary ">
           <Bot size={32} className="text-primary-foreground" />
         </section>
       </SheetTrigger>
