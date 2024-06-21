@@ -48,7 +48,6 @@ export default function ChatIA() {
     const text = response.text();
     setGeminiResponse(text);
 
-
     console.log(text);
     console.info("Esse e o conteudo de respo9nse: ", response);
   };
