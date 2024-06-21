@@ -1,7 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const AA="AIzaSyCsIm7LrgPyafVBFgM31pgXk7BmaCyy2_E"
-
 export const API_KEY_GEMINI: string | undefined = process.env
   .NEXT_PUBLIC_GOOGLE_API_KEY as string;
 
