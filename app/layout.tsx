@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
 import ClientSideProviders from "@/utils/providers";
+import ChatIA from "@/components/Chat_IA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
             <Header />
             {children}
             <Toaster />
+            <ChatIA />
           </body>
         </ThemeProvider>
       </ClientSideProviders>
