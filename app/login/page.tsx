@@ -1,24 +1,23 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { Input } from "@/components/ui/input";
-import Link from "next/link";
-import { toast } from "@/components/ui/use-toast";
-import { useRouter } from "next/navigation";
-
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import { Input } from '@/components/ui/input';
+import Link from 'next/link';
+import { toast } from '@/components/ui/use-toast';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     if (!email || !password) {
-      toast({ title: "Por favor, preencha todos os campos." });
+      toast({ title: 'Por favor, preencha todos os campos.' });
       return;
     }
 
@@ -28,22 +27,30 @@ export default function Login() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username: email, password }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        sessionStorage.setItem("isAuthenticated", "true");
-        toast({ title: "Bem-vindo de volta!" });
-        router.push('/products');
-        toast({ title: data.message || "Erro ao realizar login." });
+        sessionStorage.setItem('isAuthenticated', 'true');
+        sessionStorage.setItem('profilePicture', data.profilePicture || '');
+
+        toast({ title: 'Bem-vindo de volta!' });
+        router.push('/products');  
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 100);
+      } else {
+        toast({ title: data.message || 'Erro ao realizar login.' });
       }
     } catch (error) {
-      console.error("Erro ao fazer login:", error);
-      toast({ title: "Erro ao realizar login." });
+      console.error('Erro ao fazer login:', error);
+      toast({ title: 'Erro ao realizar login.' });
     }
   };
+
 
   return (
     <main className="flex w-full h-screen overflow-y-hidden">
@@ -52,8 +59,7 @@ export default function Login() {
           Conecte-se!
         </h1>
         <p className="text-muted-foreground leading-relaxed text-center">
-          Comece a utilizar nossa plataforma com total liberdade após realizar o
-          login em nossos serviços.
+          Comece a utilizar nossa plataforma com total liberdade após realizar o login em nossos serviços.
         </p>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <Input
