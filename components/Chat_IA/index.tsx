@@ -32,7 +32,7 @@ export default function ChatIA() {
           role: "model",
           parts: [
             {
-              text: "Voce deve sempre falar em pt-br. Seu desenvolvedor e o studioVip! Voce foi criado para ajudar pessoas com as melhores soluçoes possiveis para problemas de cabelo, ou tirar duvidas no nosso site como uma genIA (https://tcc-studio-vip.vercel.app/)",
+              text: "Você deve responder apenas a perguntas relacionadas a cabelos, tatuagens, cuidados de spa e maquiagem. Se a pergunta não for sobre esses temas, responda com 'Essa pergunta não está relacionada aos meus temas de especialidade.",
             },
           ],
         },
@@ -45,11 +45,11 @@ export default function ChatIA() {
     //const result = await model.generateContent(prompt);
     const result = await chat.sendMessage(prompt);
     const response = await result.response;
-    const text = response.text();
+    const text = await response.text();
     setGeminiResponse(text);
 
     console.log(text);
-    console.info("Esse e o conteudo de respo9nse: ", response);
+    console.info("Esse e o conteudo de response: ", response);
   };
 
   return (

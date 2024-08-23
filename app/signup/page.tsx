@@ -17,8 +17,8 @@ export default function Login() {
    * @returns {boolean}
    */
   const validarCPF = (cpf: string): boolean => {
-    cpf = cpf.replace(/[^\d]+/g, ""); /* tirar letras e caracterrias especiais */
-    if (cpf.length !== 11) return false; /* quantidade numero digitado para verificar caso passe vira false*/
+    cpf = cpf.replace(/[^\d]+/g, "");
+    if (cpf.length !== 11) return false; 
 
     let soma = 0;
     let resto;
@@ -37,14 +37,12 @@ export default function Login() {
   };
 
   /**
-   * Essa função retorna uma mensagem (toast) como se fosse uma autenticação do usuário
    * @param {FormEvent} e
    */
   const cadastrarUsuario = (e: FormEvent) => {
-    // Prevenir recarregamento da página
+
     e.preventDefault();
 
-    // Validação do CPF
     if (!validarCPF(cpf)) {
       toast({
         description: "CPF inválido!",
