@@ -15,6 +15,7 @@ import { Textarea } from "../ui/textarea";
 import { model } from "@/utils/GeminiUtils";
 import { useState } from "react";
 
+
 export default function ChatIA() {
   const [userPromptValue, setUserPromptValue] = useState("");
   const [geminiResponse, setGeminiResponse] = useState("");
