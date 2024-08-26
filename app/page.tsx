@@ -18,6 +18,15 @@ import {
 } from "@/components/ui/carousel";
 import SearchInputWithIcon from "@/components/Input-Icon";
 import { Mail } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
 import Link from "next/link";
 
 export default function Home() {

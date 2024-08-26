@@ -39,6 +39,7 @@ export default function Login() {
         sessionStorage.setItem('profilePicture', profilePicture);
 
         toast({ title: 'Bem-vindo de volta!' });
+        window.location.reload();
         router.push('/profile');
       } else {
         toast({ title: data.error || 'Erro ao realizar login.' });

@@ -100,10 +100,10 @@ export default function Profile() {
                     ...prevProfile,
                     profile_picture: data.profilePicture,
                 }));
-                sessionStorage.setItem('profilePicture', data.profilePicture); // Atualize o sessionStorage
+                sessionStorage.setItem('profilePicture', data.profilePicture);
                 toast({ title: 'Imagem atualizada com sucesso!' });
 
-                // Recarrega a página após o upload
+                
                 window.location.reload();
             } else {
                 toast({ title: data.error || 'Erro ao atualizar imagem.' });
