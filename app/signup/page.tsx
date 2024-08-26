@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -7,9 +7,15 @@ import { Sparkles } from "lucide-react";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
   const [cpf, setCpf] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [telefone, setTelefone] = useState<string>("");
+  const [senha, setSenha] = useState<string>("");
+  const [nome, setNome] = useState<string>(""); // Correção do nome do estado
+  const router = useRouter();
 
   /**
    * Função para validar CPF
@@ -39,8 +45,7 @@ export default function Login() {
   /**
    * @param {FormEvent} e
    */
-  const cadastrarUsuario = (e: FormEvent) => {
-
+  const cadastrarUsuario = async (e: FormEvent) => {
     e.preventDefault();
 
     if (!validarCPF(cpf)) {
@@ -50,9 +55,34 @@ export default function Login() {
       return;
     }
 
-    toast({
-      description: "Conta criada com sucesso!",
-    });
+    try {
+      const response = await fetch('/api/cadastrar-usuario', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nome, cpf, email, telefone, senha }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          description: "Conta criada com sucesso!",
+        });
+        router.push('/profile');
+      } else {
+        toast({
+          description: `Erro: ${data.error || 'Erro ao criar conta!'}`,
+        });
+      }
+
+    } catch (error) {
+      console.error('Erro ao criar conta:', error);
+      toast({
+        description: 'Erro ao criar conta!',
+      });
+    }
   };
 
   return (
@@ -66,16 +96,34 @@ export default function Login() {
           cadastro em nossos serviços.
         </p>
         <form className="space-y-2" onSubmit={cadastrarUsuario}>
-          <Input placeholder="Nome" />
+          <Input 
+            placeholder="Nome" 
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
           <Input
             type="text"
             placeholder="CPF"
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
           />
-          <Input placeholder="Email" />
-          <Input placeholder="Telefone" type="text" />
-          <Input placeholder="Senha" />
+          <Input 
+            placeholder="Email" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input 
+            placeholder="Telefone" 
+            type="text" 
+            value={telefone}
+            onChange={(e) => setTelefone(e.target.value)}
+          />
+          <Input 
+            placeholder="Senha" 
+            type="password" 
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
           <Button className="gap-2 justify-center w-full" type="submit">
             <Sparkles size={16} />
             Criar minha conta!

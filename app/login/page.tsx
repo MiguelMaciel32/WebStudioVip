@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { toast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -33,24 +33,21 @@ export default function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        sessionStorage.setItem('isAuthenticated', 'true');
-        sessionStorage.setItem('profilePicture', data.profilePicture || '');
+        sessionStorage.setItem('token', data.token); // Salva o token
+        sessionStorage.setItem('email', email);
+        const profilePicture = data.profilePicture || 'https://t3.ftcdn.net/jpg/03/81/30/16/360_F_381301638_mo8XtnvD4VtKWjNITYhwL3ITRxF4ldaO.jpg';
+        sessionStorage.setItem('profilePicture', profilePicture);
 
         toast({ title: 'Bem-vindo de volta!' });
-        router.push('/products');  
-
-        setTimeout(() => {
-          window.location.reload();
-        }, 100);
+        router.push('/profile');
       } else {
-        toast({ title: data.message || 'Erro ao realizar login.' });
+        toast({ title: data.error || 'Erro ao realizar login.' });
       }
     } catch (error) {
       console.error('Erro ao fazer login:', error);
       toast({ title: 'Erro ao realizar login.' });
     }
   };
-
 
   return (
     <main className="flex w-full h-screen overflow-y-hidden">
@@ -81,7 +78,7 @@ export default function Login() {
           </Button>
         </form>
         <section className="flex flex-col gap-2 justify-center mt-4">
-          <Link className="w-full" href="/login/business">
+          <Link href="/login/business">
             <Button variant="secondary" className="w-full">
               Entrar com uma conta empresarial
             </Button>

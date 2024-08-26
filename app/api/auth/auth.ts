@@ -1,33 +1,41 @@
-import { NextResponse } from 'next/server';
-import { query } from '../../../lib/db';
+import mysql from 'mysql2/promise';
+
+export const createConnection = async () => {
+  const connection = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '723616Ll#',
+    database: 'studiovip'
+  });
+  return connection;
+};
 
 
-interface User {
-  id: number;
-  username: string;
-  password: string;
-}
+type QueryResult<T extends object = any> = [T[], mysql.FieldPacket[]] | [mysql.ResultSetHeader, mysql.FieldPacket[]];
 
-export async function POST(request: Request) {
+export const query = async <T extends object = any>(sql: string, values: any[] = []): Promise<T[]> => {
+  const connection = await createConnection();
   try {
-    const { username, password } = await request.json();
+    console.log('Executando consulta SQL:', sql, 'Com valores:', values);
+    const [results, fields] = await connection.execute(sql, values) as QueryResult<T>;
+    console.log('Resultado da consulta:', results);
     
 
-    const [rows] = await query<User>('SELECT * FROM users WHERE username = ?', [username]);
+    if ('affectedRows' in results) {
 
- 
-    if (rows.length === 0) {
-      return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 });
+      return [] as T[];
     }
-
-    const user = rows[0];
-    if (user.password === password) {
-      return NextResponse.json({ message: 'Login bem-sucedido' });
-    } else {
-      return NextResponse.json({ error: 'Senha incorreta' }, { status: 401 });
-    }
+    
+    return results;
   } catch (error) {
-
-    return NextResponse.json({ error: 'Erro interno do servidor' }, { status: 500 });
+    if (error instanceof Error) {
+      console.error('Erro ao executar a consulta:', error.message);
+      throw new Error(`Erro ao executar a consulta: ${error.message}`);
+    } else {
+      console.error('Erro desconhecido ao executar a consulta.');
+      throw new Error('Erro desconhecido ao executar a consulta.');
+    }
+  } finally {
+    await connection.end();
   }
-}
+};
