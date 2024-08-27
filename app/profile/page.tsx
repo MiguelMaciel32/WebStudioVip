@@ -3,15 +3,19 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from '@/components/ui/use-toast';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from "@/components/ui/dialog";
 import { PencilIcon } from '@heroicons/react/24/solid';
 
 export default function Profile() {
     const [profile, setProfile] = useState<any>(null);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
-    const [imagePreview, setImagePreview] = useState<string | null>(null); // Pré-visualização da imagem
-    const [isEditing, setIsEditing] = useState<boolean>(false);
+    const [imagePreview, setImagePreview] = useState<string | null>(null);
+    const [isEditing, setIsEditing] = useState<'about' | 'contact' | false>(false);
     const [newAbout, setNewAbout] = useState<string>('');
     const [newContact, setNewContact] = useState<string>('');
     const router = useRouter();
@@ -19,7 +23,6 @@ export default function Profile() {
     useEffect(() => {
         const fetchProfile = async () => {
             const token = sessionStorage.getItem('token');
-
             if (!token) {
                 toast({ title: 'Você precisa estar logado para acessar esta página.' });
                 router.push('/login');
@@ -29,18 +32,16 @@ export default function Profile() {
             try {
                 const response = await fetch('/api/profile', {
                     method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                    },
+                    headers: { 'Authorization': `Bearer ${token}` },
                 });
 
                 const data = await response.json();
 
                 if (response.ok) {
                     setProfile(data);
-                    setImagePreview(data.profile_picture); // Define a imagem de perfil no início
-                    setNewAbout(data.about || ''); // Define a bio inicial
-                    setNewContact(data.contact || ''); // Define o contato inicial
+                    setImagePreview(data.profile_picture);
+                    setNewAbout(data.about || '');
+                    setNewContact(data.contact || '');
                 } else {
                     toast({ title: data.error || 'Erro ao carregar perfil.' });
                     router.push('/login');
@@ -58,7 +59,7 @@ export default function Profile() {
         if (event.target.files?.[0]) {
             const file = event.target.files[0];
             setSelectedFile(file);
-            setImagePreview(URL.createObjectURL(file)); // Atualiza a pré-visualização da imagem
+            setImagePreview(URL.createObjectURL(file));
         } else {
             setSelectedFile(null);
             setImagePreview(null);
@@ -66,7 +67,7 @@ export default function Profile() {
     };
 
     const handleImageClick = () => {
-        document.getElementById('fileInput')?.click(); // Simula o clique no input de arquivo
+        document.getElementById('fileInput')?.click();
     };
 
     const handleUpload = async () => {
@@ -76,20 +77,17 @@ export default function Profile() {
         }
 
         const confirmUpload = window.confirm('Você tem certeza que deseja atualizar a imagem do perfil?');
-
         if (!confirmUpload) return;
 
         const token = sessionStorage.getItem('token');
         const formData = new FormData();
         formData.append('file', selectedFile);
-        formData.append('userId', profile?.id); // Inclua o ID do usuário
+        formData.append('userId', profile?.id);
 
         try {
             const response = await fetch('/api/upload', {
                 method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                },
+                headers: { 'Authorization': `Bearer ${token}` },
                 body: formData,
             });
 
@@ -102,8 +100,6 @@ export default function Profile() {
                 }));
                 sessionStorage.setItem('profilePicture', data.profilePicture);
                 toast({ title: 'Imagem atualizada com sucesso!' });
-
-                
                 window.location.reload();
             } else {
                 toast({ title: data.error || 'Erro ao atualizar imagem.' });
@@ -114,16 +110,12 @@ export default function Profile() {
         }
     };
 
-    const handleEdit = () => {
-        setIsEditing(true);
-    };
-
     const handleSave = async () => {
         if (!newAbout.trim() || !newContact.trim()) {
             toast({ title: 'Por favor, preencha todos os campos.' });
             return;
         }
-    
+
         const token = sessionStorage.getItem('token');
         const response = await fetch('/api/update-profile', {
             method: 'PUT',
@@ -137,9 +129,9 @@ export default function Profile() {
                 contact: newContact,
             }),
         });
-    
+
         const data = await response.json();
-    
+
         if (response.ok) {
             setProfile((prevProfile: any) => ({
                 ...prevProfile,
@@ -152,89 +144,114 @@ export default function Profile() {
             toast({ title: data.error || 'Erro ao atualizar perfil.' });
         }
     };
-    
-
-    if (!profile) {
-        return (
-            <div className="flex items-center justify-center min-h-screen">
-                <div className="w-20 h-20 border-4 border-transparent border-t-black rounded-full animate-spin">
-                    <div className="w-16 h-16 border-4 border-transparent border-t-gray-800 rounded-full animate-spin"></div>
-                </div>
-            </div>
-        );
-    }
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-background">
-            <div className="w-full max-w-md p-6 space-y-6 bg-card rounded-lg shadow-lg">
-                <div className="flex flex-col items-center gap-4">
-                    <div className="relative flex-shrink-0">
-                        <div
-                            onClick={handleImageClick}
-                            className="w-32 h-32 cursor-pointer overflow-hidden rounded-full border-2 border-gray-300 bg-gray-100"
-                        >
-                            <img
-                                src={imagePreview || profile.profile_picture}
-                                alt="Profile Picture"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                        <input
-                            type="file"
-                            id="fileInput"
-                            name="file"
-                            accept="image/jpeg, image/png"
-                            onChange={handleFileChange}
-                            className="hidden"
-                        />
-                    </div>
-                    <div>
-                        <div className="text-card-foreground font-medium text-xl">{profile.name}</div>
-                    </div>
+        <div className="grid gap-6 max-w-3xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-4">
+            <Dialog>
+      <DialogTrigger asChild>
+        <Avatar className="h-20 w-20 cursor-pointer border-primary">
+          <AvatarImage src={imagePreview || profile?.profile_picture} alt="User Avatar" />
+          <AvatarFallback />
+        </Avatar>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Alterar Imagem de Perfil</DialogTitle>
+          <DialogDescription>
+            Selecione uma nova imagem para o seu perfil.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <Input
+            type="file"
+            id="fileInput"
+            accept="image/jpeg, image/png"
+            onChange={handleFileChange}
+          />
+          {imagePreview && (
+            <div className="mt-2">
+              <img src={imagePreview} alt="Preview" className="rounded-lg" />
+            </div>
+          )}
+        </div>
+        <DialogFooter>
+         <Button onClick={handleUpload}>Atualizar Imagem de Perfil</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+                <div className="grid gap-1">
+                    <h2 className="text-2xl font-bold">{profile?.name}</h2>
                 </div>
-                <div className="grid gap-4">
-                    <div className="grid gap-1">
-                        <div className="text-muted-foreground text-sm font-medium flex items-center">
+            </div>
+            <div className="grid gap-4">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>
                             Sobre
-                            <PencilIcon className="w-5 h-5 ml-2 cursor-pointer" onClick={() => setIsEditing(true)} />
-                        </div>
-                        {isEditing ? (
-                            <textarea
-                                value={newAbout}
-                                onChange={(e) => setNewAbout(e.target.value)}
-                                className="w-full p-2 border border-gray-300 rounded"
-                            />
-                        ) : (
-                            <div className="text-card-foreground">{profile.about || 'Não definido'}</div>
-                        )}
-                    </div>
-                    <div className="grid gap-1">
-                        <div className="text-muted-foreground text-sm font-medium flex items-center">
-                            Contato
-                            <PencilIcon className="w-5 h-5 ml-2 cursor-pointer" onClick={() => setIsEditing(true)} />
-                        </div>
-                        {isEditing ? (
-                            <input
-                                type="text"
-                                value={newContact}
-                                onChange={(e) => setNewContact(e.target.value)}
-                                className="w-full p-2 border border-gray-300 rounded"
-                            />
-                        ) : (
-                            <div className="text-card-foreground">{profile.contact || 'Não definido'}</div>
-                        )}
-                    </div>
-                </div>
-                {isEditing && (
-                    <div className="mt-4">
-                        <Button onClick={handleSave}>Salvar</Button>
-                    </div>
-                )}
-                {selectedFile && !isEditing && (
-                    <div className="mt-4">
-                        <Button onClick={handleUpload}>Atualizar Imagem</Button>
-                    </div>
-                )}
+                            <Dialog>
+                                <DialogTrigger>
+                                    <PencilIcon className="w-5 h-5 ml-2 cursor-pointer" onClick={() => setIsEditing('about')} />
+                                </DialogTrigger>
+                                <DialogContent>
+                                    <DialogHeader>
+                                        <DialogTitle>Editar Sobre</DialogTitle>
+                                    </DialogHeader>
+                                    {isEditing === 'about' && (
+                                        <>
+                                            <Textarea
+                                                value={newAbout}
+                                                onChange={(e) => setNewAbout(e.target.value)}
+                                                className="w-full p-2 border border-gray-300 rounded"
+                                            />
+                                            <DialogFooter>
+                                                <Button onClick={handleSave} className="mr-2">Salvar</Button>
+                                                <Button onClick={() => setIsEditing(false)} variant="outline">Cancelar</Button>
+                                            </DialogFooter>
+                                        </>
+                                    )}
+                                </DialogContent>
+                            </Dialog>
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p> {profile?.about || "comece editando sua biografia"}</p>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>
+                            Contatos
+                            <Dialog>
+                                <DialogTrigger>
+                                    <PencilIcon className="w-5 h-5 ml-2 cursor-pointer" onClick={() => setIsEditing('contact')} />
+                                </DialogTrigger>
+                                <DialogContent>
+                                    <DialogHeader>
+                                        <DialogTitle>Editar Contatos</DialogTitle>
+                                    </DialogHeader>
+                                    {isEditing === 'contact' && (
+                                        <>
+                                            <Input
+                                                type="text"
+                                                value={newContact}
+                                                onChange={(e) => setNewContact(e.target.value)}
+                                                className="w-full p-2 border border-gray-300 rounded"
+                                            />
+                                            <DialogFooter>
+                                                <Button onClick={handleSave} className="mr-2">Salvar</Button>
+                                                <Button onClick={() => setIsEditing(false)} variant="outline">Cancelar</Button>
+                                            </DialogFooter>
+                                        </>
+                                    )}
+                                </DialogContent>
+                            </Dialog>
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                       <p>  {profile?.contact || "comece editando seus dados"}</p>
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );
