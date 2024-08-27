@@ -151,7 +151,7 @@ export default function Profile() {
             <Dialog>
       <DialogTrigger asChild>
         <Avatar className="h-20 w-20 cursor-pointer border-primary">
-          <AvatarImage src={imagePreview || profile?.profile_picture} alt="User Avatar" />
+          <AvatarImage src={imagePreview || profile?.profile_picture} alt="User Avataar" />
           <AvatarFallback />
         </Avatar>
       </DialogTrigger>
