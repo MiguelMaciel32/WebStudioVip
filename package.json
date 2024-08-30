@@ -45,6 +45,7 @@
     "@uidotdev/usehooks": "2.4.1-experimental.1",
     "@vercel/postgres": "^0.9.0",
     "aws-sdk": "^2.1684.0",
+    "axios": "^1.7.5",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "class-variance-authority": "^0.7.0",

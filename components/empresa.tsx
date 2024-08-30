@@ -1,16 +1,26 @@
-'use client';
+import React, { useState } from "react";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "./ui/dialog";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Textarea } from "./ui/textarea";
 
-import React, { useState } from 'react';
-
-export default function CadastrarEmpresa() {
+const EmpresaForm = () => {
   const [companyName, setCompanyName] = useState('');
   const [contactInfo, setContactInfo] = useState('');
   const [address, setAddress] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [logo, setLogo] = useState<File | null>(null);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [userId, setUserId] = useState('');
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -21,6 +31,7 @@ export default function CadastrarEmpresa() {
     }
 
     const formData = new FormData();
+    formData.append('userId', userId);
     formData.append('companyName', companyName);
     formData.append('contactInfo', contactInfo);
     formData.append('address', address);
@@ -29,16 +40,25 @@ export default function CadastrarEmpresa() {
     formData.append('logo', logo);
 
     try {
+      // Log FormData entries for debugging
+      for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+
       const response = await fetch('/api/cadastrar-empresa', {
         method: 'POST',
         body: formData,
       });
 
+      // Log response status and body for debugging
+      console.log('Response status:', response.status);
+      const result = await response.json();
+      console.log('Response body:', result);
+
       if (!response.ok) {
-        throw new Error('Erro ao cadastrar empresa');
+        throw new Error(result.error || 'Erro ao cadastrar empresa');
       }
 
-      const result = await response.json();
       if (result.error) {
         setError(result.error);
       } else {
@@ -49,88 +69,105 @@ export default function CadastrarEmpresa() {
         setUsername('');
         setPassword('');
         setLogo(null);
+        setUserId('');
       }
     } catch (error) {
+      setError('Erro ao cadastrar empresa: ' + (error as Error).message);
     }
   };
 
   return (
-    <section className="px-6 py-4">
-      <h1 className="font-bold w-full text-center mt-4 text-3xl tracking-tighter md:text-5xl md:text-start">
-        Cadastrar Empresa
-      </h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="companyName">Nome da Empresa:</label>
-          <input
-            id="companyName"
-            type="text"
-            value={companyName}
-            onChange={(e) => setCompanyName(e.target.value)}
-            required
-            className="border rounded px-2 py-1 w-full"
-          />
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">
+          Cadastrar Empresa
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[600px]">
+        <div className="flex flex-col items-center justify-center gap-6 py-8">
+          <div className="grid gap-2">
+            <DialogTitle>Cadastrar Nova Empresa</DialogTitle>
+            <DialogDescription>Preencha o formulário para adicionar uma nova empresa.</DialogDescription>
+          </div>
+          {error && <p className="text-red-500">{error}</p>}
+          {success && <p className="text-green-500">{success}</p>}
+          <form className="grid w-full gap-4" onSubmit={handleSubmit}>
+            <div className="grid gap-2">
+              <Label htmlFor="userId">User ID</Label>
+              <Input
+                id="userId"
+                name="userId"
+                placeholder="Digite o ID do usuário"
+                required
+                type="text"
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="companyName">Nome da Empresa</Label>
+              <Input
+                id="companyName"
+                name="companyName"
+                placeholder="Digite o nome da empresa"
+                required
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="contactInfo">Informações de Contato</Label>
+              <Input
+                id="contactInfo"
+                name="contactInfo"
+                placeholder="Digite as informações de contato"
+                value={contactInfo}
+                onChange={(e) => setContactInfo(e.target.value)}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="address">Endereço</Label>
+              <Textarea
+                id="address"
+                name="address"
+                placeholder="Digite o endereço da empresa"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="logo">Logotipo</Label>
+              <Input
+                id="logo"
+                name="logo"
+                type="file"
+                onChange={(e) => setLogo(e.target.files ? e.target.files[0] : null)}
+                required
+              />
+            </div>
+            <div className="flex justify-end gap-2">
+              <Button type="button" variant="outline" onClick={() => {
+                setCompanyName('');
+                setContactInfo('');
+                setAddress('');
+                setUsername('');
+                setPassword('');
+                setLogo(null);
+                setUserId('');
+                setError(null);
+                setSuccess(null);
+              }}>
+                Cancelar
+              </Button>
+              <Button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+                Cadastrar
+              </Button>
+            </div>
+          </form>
         </div>
-        <div>
-          <label htmlFor="contactInfo">Informações de Contato:</label>
-          <input
-            id="contactInfo"
-            type="text"
-            value={contactInfo}
-            onChange={(e) => setContactInfo(e.target.value)}
-            required
-            className="border rounded px-2 py-1 w-full"
-          />
-        </div>
-        <div>
-          <label htmlFor="address">Endereço:</label>
-          <input
-            id="address"
-            type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            required
-            className="border rounded px-2 py-1 w-full"
-          />
-        </div>
-        <div>
-          <label htmlFor="username">Nome de Usuário:</label>
-          <input
-            id="username"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            className="border rounded px-2 py-1 w-full"
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Senha:</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="border rounded px-2 py-1 w-full"
-          />
-        </div>
-        <div>
-          <label htmlFor="logo">Logo:</label>
-          <input
-            id="logo"
-            type="file"
-            onChange={(e) => setLogo(e.target.files ? e.target.files[0] : null)}
-            required
-            className="border rounded px-2 py-1 w-full"
-          />
-        </div>
-        {error && <p className="text-red-500">{error}</p>}
-        {success && <p className="text-green-500">{success}</p>}
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-          Cadastrar
-        </button>
-      </form>
-    </section>
+      </DialogContent>
+    </Dialog>
   );
-}
+};
+
+export default EmpresaForm;

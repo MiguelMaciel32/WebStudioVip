@@ -1,4 +1,3 @@
-// app/api/cadastrar-empresa/route.ts
 import { NextResponse } from 'next/server';
 import { query } from '../../../lib/db';
 import path from 'path';
@@ -14,10 +13,10 @@ export async function POST(req: Request) {
     const contactInfo = formData.get('contactInfo') as string | null;
     const address = formData.get('address') as string | null;
     const username = formData.get('username') as string | null;
-    const password = formData.get('password') as string | null;
+
 
     // Verifica se todos os campos obrigatórios estão presentes
-    if (!file || !companyName || !contactInfo || !address || !username || !password) {
+    if (!file || !companyName || !contactInfo || !address || !username ) {
       return NextResponse.json({ error: 'Todos os campos são obrigatórios.' }, { status: 400 });
     }
 
@@ -31,8 +30,8 @@ export async function POST(req: Request) {
 
     // Insere a empresa no banco de dados
     const [result] = await query(
-      'INSERT INTO users (username, password, company_name, contact_info, address, logo) VALUES (?, ?, ?, ?, ?, ?)',
-      [username, password, companyName, contactInfo, address, logoUrl]
+      'INSERT INTO users (username, company_name, contact_info, address, logo) VALUES (?, ?, ?, ?, ?, ?)',
+      [username,  companyName, contactInfo, address, logoUrl]
     );
 
     const insertId = result.insertId;

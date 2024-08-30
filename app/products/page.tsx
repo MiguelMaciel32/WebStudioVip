@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { StarsIcon } from "lucide-react";
 
-// Função para buscar os produtos (empresas)
 async function fetchProducts() {
   try {
     const response = await fetch('/api/listagem-empresas');
@@ -20,7 +19,6 @@ async function fetchProducts() {
   }
 }
 
-// Componente para listar os produtos (empresas)
 export default function PaginaDeProdutos() {
   const [products, setProducts] = useState<any[]>([]);
 
