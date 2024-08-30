@@ -1,10 +1,21 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';  // Certifique-se de que o caminho está correto
-import { ModeToggle } from './ui/mode-toggle';    // Certifique-se de que o caminho está correto
+import { Button } from '@/components/ui/button';  
+import { ModeToggle } from './ui/mode-toggle'; 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import CadastrarEmpresaModal from '@/components/empresa';
 
 export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -35,6 +46,9 @@ export default function Header() {
         </h1>
       </Link>
       <nav className="flex gap-5 items-center relative">
+        {/* Exibir o botão "Cadastrar Empresa" apenas se o usuário estiver logado */}
+        {isLoggedIn && <CadastrarEmpresaModal />}
+
         <ModeToggle />
 
         <div className="flex items-center gap-2 relative">

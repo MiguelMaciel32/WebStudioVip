@@ -1,18 +1,16 @@
 import mysql from 'mysql2/promise';
+
 export const createConnection = async () => {
   const connection = await mysql.createConnection({
-    host: process.env.MYSQL_ADDON_HOST,
-    port: Number(process.env.MYSQL_ADDON_PORT),
-    user: process.env.MYSQL_ADDON_USER,
-    password: process.env.MYSQL_ADDON_PASSWORD,
-    database: process.env.MYSQL_ADDON_DB,
+    host: 'localhost',
+    user: 'root',
+    password: '723616Ll#',
+    database: 'studiovip',
   });
   return connection;
 };
 
-
 type SelectQueryResult<T = any> = T[];
-
 
 export const query = async <T = any>(sql: string, values: any[] = []): Promise<SelectQueryResult<T>> => {
   const connection = await createConnection();

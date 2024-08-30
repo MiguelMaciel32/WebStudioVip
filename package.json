@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.13.0",
+    "@headlessui/react": "^2.1.3",
     "@heroicons/react": "^2.1.5",
     "@hookform/resolvers": "^3.6.0",
     "@phosphor-icons/react": "^2.1.6",
@@ -43,6 +44,7 @@
     "@shadcn/ui": "^0.0.4",
     "@uidotdev/usehooks": "2.4.1-experimental.1",
     "@vercel/postgres": "^0.9.0",
+    "aws-sdk": "^2.1684.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "class-variance-authority": "^0.7.0",

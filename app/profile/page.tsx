@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from "@/components/ui/dialog";
 import { PencilIcon } from '@heroicons/react/24/solid';
+import CadastrarEmpresaModal from '@/components/empresa';
 
 export default function Profile() {
     const [profile, setProfile] = useState<any>(null);

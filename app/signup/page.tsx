@@ -130,7 +130,7 @@ export default function Login() {
           </Button>
         </form>
         <section className="flex flex-col gap-2 justify-center">
-          <Link href={"/login"} className="flex">
+          <Link href={"/profile"} className="flex">
             <Button variant={"link"} className="flex justify-center w-full">
               Ou entre em uma conta existente!
             </Button>
