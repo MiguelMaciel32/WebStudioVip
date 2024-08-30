@@ -11,6 +11,10 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 
+interface IBusiness {
+  businessID: string | number | null;
+}
+
 const EmpresaForm = () => {
   const [companyName, setCompanyName] = useState('');
   const [contactInfo, setContactInfo] = useState('');
@@ -20,7 +24,6 @@ const EmpresaForm = () => {
   const [logo, setLogo] = useState<File | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-  const [userId, setUserId] = useState('');
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -29,9 +32,9 @@ const EmpresaForm = () => {
       setError('Todos os campos são obrigatórios.');
       return;
     }
+    // magina kakkaaakkkkkk
 
     const formData = new FormData();
-    formData.append('userId', userId);
     formData.append('companyName', companyName);
     formData.append('contactInfo', contactInfo);
     formData.append('address', address);
@@ -69,10 +72,9 @@ const EmpresaForm = () => {
         setUsername('');
         setPassword('');
         setLogo(null);
-        setUserId('');
       }
-    } catch (error) {
-      setError('Erro ao cadastrar empresa: ' + (error as Error).message);
+    } catch (e) {
+      setError('Erro ao cadastrar empresa: ' + e);
     }
   };
 
@@ -92,18 +94,7 @@ const EmpresaForm = () => {
           {error && <p className="text-red-500">{error}</p>}
           {success && <p className="text-green-500">{success}</p>}
           <form className="grid w-full gap-4" onSubmit={handleSubmit}>
-            <div className="grid gap-2">
-              <Label htmlFor="userId">User ID</Label>
-              <Input
-                id="userId"
-                name="userId"
-                placeholder="Digite o ID do usuário"
-                required
-                type="text"
-                value={userId}
-                onChange={(e) => setUserId(e.target.value)}
-              />
-            </div>
+           
             <div className="grid gap-2">
               <Label htmlFor="companyName">Nome da Empresa</Label>
               <Input
@@ -153,13 +144,12 @@ const EmpresaForm = () => {
                 setUsername('');
                 setPassword('');
                 setLogo(null);
-                setUserId('');
                 setError(null);
                 setSuccess(null);
               }}>
                 Cancelar
               </Button>
-              <Button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+              <Button type="submit" onClick={handleSubmit} className="bg-blue-500 text-white px-4 py-2 rounded">
                 Cadastrar
               </Button>
             </div>

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 
 export default function CadastrarEmpresa() {
+  const [businessId, setBusinessId] = useState(0);
   const [companyName, setCompanyName] = useState('');
   const [contactInfo, setContactInfo] = useState('');
   const [address, setAddress] = useState('');
@@ -10,7 +11,7 @@ export default function CadastrarEmpresa() {
   const [logo, setLogo] = useState<File | null>(null);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-
+  
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -32,9 +33,7 @@ export default function CadastrarEmpresa() {
         body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error('Erro ao cadastrar empresa');
-      }
+    
 
       const result = await response.json();
       if (result.error) {
@@ -47,7 +46,8 @@ export default function CadastrarEmpresa() {
         setUsername('');
         setLogo(null);
       }
-    } catch (error) {
+    } catch (e: any) {
+      console.log(e);
     }
   };
 
@@ -113,10 +113,12 @@ export default function CadastrarEmpresa() {
         </div>
         {error && <p className="text-red-500">{error}</p>}
         {success && <p className="text-green-500">{success}</p>}
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button type="submit" onClick={handleSubmit} className="bg-blue-500 text-white px-4 py-2 rounded">
           Cadastrar
         </button>
       </form>
     </section>
   );
 }
+
+// irmao a gwntw n tá na rota errada n? cade o input id? simm, mas la no browser tem
